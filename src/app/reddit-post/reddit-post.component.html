@@ -1,3 +1,10 @@
-<p>reddit-post works!</p>
+<div *ngIf="post !== null && post !== undefined">
+    <a href="https://reddit.com/{{post.permalink}}">
+        <h2>{{post.title}}</h2>
+        <img *ngIf="post.thumbnail !== null 
+        && post.thumbnail !== undefined 
+        && post.thumbnail == 'default'"
+        src="{{post.thumbnail}}" />
+    </a>
 
-<button (click)="getPost()">Get a Reddit Post</button>
+</div>
