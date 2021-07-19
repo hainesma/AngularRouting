@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { RedditPostComponent } from './reddit-post/reddit-post.component';
@@ -10,7 +11,12 @@ import { RedditPostComponent } from './reddit-post/reddit-post.component';
     RedditPostComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot([
+      {path: '', component: AppComponent, pathMatch: 'full'},
+      {path: 'redditPost', component: RedditPostComponent}
+    ])
+
   ],
   providers: [],
   bootstrap: [AppComponent]
